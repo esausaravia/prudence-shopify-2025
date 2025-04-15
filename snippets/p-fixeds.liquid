@@ -1,0 +1,97 @@
+{%- comment -%}
+  USE: {% render 'p-fixeds' %}
+{%- endcomment -%}
+<div id="floating-left" class="floating-at-sides">
+  <div class="sticky-container" style="height:40%">
+    <figure class="sticky-top">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0266/4035/1286/files/flotante2.png?v=1744754054"
+        alt="Flotante2"
+        width="400"
+        height="833"
+      >
+    </figure>
+  </div>
+</div>
+<div id="floating-right" class="floating-at-sides">
+  <div class="sticky-container" style="height:35%">
+    <figure class="sticky-top">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0266/4035/1286/files/flotante1.png?v=1744754054"
+        alt="Flotante1"
+        width="418"
+        height="1076"
+      >
+    </figure>
+  </div>
+  <div class="middle-container" style="height:30%">&nbsp;</div>
+  <div class="sticky-container" style="height: 35%;">
+    <figure class="sticky-top" style="z-index:1; margin-bottom:-50%;">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0266/4035/1286/files/flotante3.png?v=1744754054"
+        alt="Foil"
+        width="373"
+        height="385"
+      >
+    </figure>
+  </div>
+</div>
+<style>
+  @media screen and (min-width: 1440px) {
+    #MainContent {
+      position: relative;
+    }
+
+    .floating-at-sides {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: calc((100vw - 1320px) / 2);
+
+      display: flex;
+      flex-direction: column;
+    }
+    #floating-left::before {
+      content: '';
+      display: block;
+      height: 30%;
+    }
+    #floating-left::after {
+      content: '';
+      display: block;
+      height: 30%;
+    }
+    #floating-right {
+      left: auto;
+      right: 0;
+    }
+    #floating-right::before {
+      content: '';
+      display: block;
+      height: 30px;
+    }
+    .floating-at-sides .sticky-container {
+      display: block;
+    }
+    .floating-at-sides .sticky-top {
+      position: sticky;
+      position: -webkit-sticky;
+      top: calc(var(--header-height) + 10px);
+      margin: 0;
+    }
+    .floating-at-sides img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const mainContent = document.querySelector('#MainContent');
+
+    if (mainContent.firstElementChild.id.match(/(slideshow|image_banner)/i)) {
+      mainContent.parentElement.insertBefore(mainContent.firstElementChild, mainContent);
+    }
+  });
+</script>
