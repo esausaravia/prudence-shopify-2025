@@ -1,1 +1,476 @@
-{"sections":{"image_banner":{"type":"image-banner","settings":{"image":"shopify:\/\/shop_images\/TopBanner_1920x_e79e7c81-afe1-4d90-b1ad-0c4a9fa58a81.webp","image_overlay_opacity":0,"image_height":"adapt","image_behavior":"none","desktop_content_position":"bottom-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"scheme-3","stack_images_on_mobile":false,"mobile_content_alignment":"center","show_text_below":false}},"multicolumn":{"type":"multicolumn","blocks":{"column1":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/condones_thumb_2.png","title":"","text":"","link_label":"","link":""}},"column_fbMnx3":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/lubricantes_thumb_2.png","title":"","text":"","link_label":"","link":""}},"column_XzLVrC":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/juguetes_thumb_2.png","title":"","text":"","link_label":"","link":""}},"column_wcBpnr":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/rx_thumb_df490043-c16c-4d5f-9540-3800eb8d9bc8.png","title":"","text":"","link_label":"","link":""}},"column_d9b74E":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/combos_thumb_09527355-aeff-49a8-9c48-d29ed057b3ab.png","title":"","text":"","link_label":"","link":""}},"column_U4iBpb":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/novedades_thumb_3ff585f4-7d11-4ac4-bf54-3d17b6b6eac3.png","title":"","text":"","link_label":"","link":""}}},"block_order":["column1","column_fbMnx3","column_XzLVrC","column_wcBpnr","column_d9b74E","column_U4iBpb"],"settings":{"title":"VINE POR...","heading_size":"h1","image_width":"full","image_ratio":"adapt","button_label":"","button_link":"","columns_desktop":6,"column_alignment":"center","background_style":"none","color_scheme":"scheme-1","columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"featured_collection":{"type":"featured-collection","settings":{"collection":"mas-vendidos","products_to_show":8,"title":"Los más sexys","heading_size":"h0","description":"<p>VER TODO<\/p>","show_description":false,"description_style":"subtitle","columns_desktop":4,"enable_desktop_slider":true,"full_width":false,"show_view_all":false,"view_all_style":"solid","color_scheme":"scheme-1","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"standard","columns_mobile":"2","swipe_on_mobile":true,"padding_top":28,"padding_bottom":36}},"collage_wWp9CC":{"type":"collage","blocks":{"video_CPrKVW":{"type":"video","settings":{"cover_image":"shopify:\/\/shop_images\/video_thumb_low.jpg","video_url":"https:\/\/www.youtube.com\/watch?v=1six8z0gusk","description":""}},"product_9EMPWY":{"type":"product","settings":{"product":"uniq","second_image":true}}},"block_order":["video_CPrKVW","product_9EMPWY"],"settings":{"heading":"Recién Llegados","heading_size":"h1","desktop_layout":"left","mobile_layout":"column","card_styles":"product-card-wrapper","color_scheme":"","padding_top":36,"padding_bottom":36}},"featured_collection_6FWwHd":{"type":"featured-collection","name":"t:sections.featured-collection.presets.name","settings":{"collection":"mas-vendidos","products_to_show":4,"title":"¿Quieres más?","heading_size":"h1","description":"<p>VER MÁS<\/p>","show_description":false,"description_style":"subtitle","columns_desktop":3,"enable_desktop_slider":true,"full_width":false,"show_view_all":false,"view_all_style":"solid","color_scheme":"","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"standard","columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"image_banner_ckgEEx":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/sex_toys_banner_low.png","image_overlay_opacity":0,"image_height":"adapt","image_behavior":"none","desktop_content_position":"middle-center","desktop_content_alignment":"center","show_text_box":true,"color_scheme":"","stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":true}},"image_with_text_hTqwdM":{"type":"image-with-text","blocks":{"heading_fUVeGN":{"type":"heading","settings":{"heading":"UNA NUEVA CATEGORÍA","heading_size":"h1"}},"text_fGadq8":{"type":"text","settings":{"text":"<p>Vincula un texto con una imagen para atraer la atención hacia tu producto, colección o artículo de blog seleccionados. Agrega detalles sobre disponibilidad y estilo, o incluso ofrece una reseña.<\/p>","text_style":"body"}},"button_xXRC7p":{"type":"button","settings":{"button_label":"COMPRAR AQUÍ","button_link":"shopify:\/\/products\/caribbean-sensitivo-mix-c-5","button_style_secondary":false}}},"block_order":["heading_fUVeGN","text_fGadq8","button_xXRC7p"],"name":"t:sections.image-with-text.presets.name","settings":{"image":"shopify:\/\/shop_images\/caribbean_sensitive_mix_banner.png","height":"adapt","desktop_image_width":"medium","layout":"image_first","image_behavior":"none","content_layout":"no-overlap","desktop_content_position":"middle","desktop_content_alignment":"center","mobile_content_alignment":"left","section_color_scheme":"","color_scheme":"","padding_top":36,"padding_bottom":36}},"rich_text_fy3Yej":{"type":"rich-text","blocks":{"heading_RVGbRD":{"type":"heading","settings":{"heading":"Instagram","heading_size":"h1"}},"heading_dgnAgn":{"type":"heading","settings":{"heading":"Síguenos en @condonesprudence","heading_size":"h2"}}},"block_order":["heading_RVGbRD","heading_dgnAgn"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":52,"padding_bottom":0}},"multicolumn_xVd4pc":{"type":"multicolumn","blocks":{"column_tP8rPr":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/instagram1.png","title":"","text":"","link_label":"","link":""}},"column_VCmXax":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/instagram2.png","title":"","text":"","link_label":"","link":""}},"column_jxcaEF":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/instagram3.png","title":"","text":"","link_label":"","link":""}},"column_WLPGgy":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/instagram4.png","title":"","text":"","link_label":"","link":""}},"column_VcXPGT":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/instagram5.png","title":"","text":"","link_label":"","link":""}},"column_qq6jyk":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/instagram6.png","title":"","text":"","link_label":"","link":""}},"column_piHCyG":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/instagram7.png","title":"","text":"","link_label":"","link":""}},"column_4jWkzq":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/instagram8.png","title":"","text":"","link_label":"","link":""}}},"block_order":["column_tP8rPr","column_VCmXax","column_jxcaEF","column_WLPGgy","column_VcXPGT","column_qq6jyk","column_piHCyG","column_4jWkzq"],"name":"t:sections.multicolumn.presets.name","settings":{"title":"","heading_size":"h1","image_width":"full","image_ratio":"adapt","button_label":"","button_link":"","columns_desktop":4,"column_alignment":"center","background_style":"none","color_scheme":"","columns_mobile":"2","swipe_on_mobile":false,"padding_top":32,"padding_bottom":32}}},"order":["image_banner","multicolumn","featured_collection","collage_wWp9CC","featured_collection_6FWwHd","image_banner_ckgEEx","image_with_text_hTqwdM","rich_text_fy3Yej","multicolumn_xVd4pc"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/TopBanner_1920x_e79e7c81-afe1-4d90-b1ad-0c4a9fa58a81.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/condones_thumb_2.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_fbMnx3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/lubricantes_thumb_2.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_XzLVrC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/juguetes_thumb_2.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wcBpnr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/rx_thumb_df490043-c16c-4d5f-9540-3800eb8d9bc8.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_d9b74E": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/combos_thumb_09527355-aeff-49a8-9c48-d29ed057b3ab.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_U4iBpb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/novedades_thumb_3ff585f4-7d11-4ac4-bf54-3d17b6b6eac3.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column1",
+        "column_fbMnx3",
+        "column_XzLVrC",
+        "column_wcBpnr",
+        "column_d9b74E",
+        "column_U4iBpb"
+      ],
+      "settings": {
+        "title": "VINE POR...",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "mas-vendidos",
+        "products_to_show": 8,
+        "title": "Los más sexys",
+        "heading_size": "h0",
+        "description": "<p>VER TODO</p>",
+        "show_description": false,
+        "description_style": "subtitle",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_DDfaMc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_jyj33k": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/lavase_banner.png",
+            "title": "",
+            "text": "",
+            "link_label": "AGENDA TU VASECTOMÍA",
+            "link": "https://lavase.mx/"
+          }
+        },
+        "column_kzE9L6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/frutas_rojas_mix_banner.png",
+            "title": "",
+            "text": "",
+            "link_label": "LOS NUEVOS Y MÁS SABROSOS",
+            "link": "shopify://products/frutas-rojas-c-5"
+          }
+        }
+      },
+      "block_order": [
+        "column_jyj33k",
+        "column_kzE9L6"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage_wWp9CC": {
+      "type": "collage",
+      "blocks": {
+        "video_CPrKVW": {
+          "type": "video",
+          "settings": {
+            "cover_image": "shopify://shop_images/video_thumb_low.jpg",
+            "video_url": "https://www.youtube.com/watch?v=1six8z0gusk",
+            "description": ""
+          }
+        },
+        "product_9EMPWY": {
+          "type": "product",
+          "settings": {
+            "product": "uniq",
+            "second_image": true
+          }
+        }
+      },
+      "block_order": [
+        "video_CPrKVW",
+        "product_9EMPWY"
+      ],
+      "settings": {
+        "heading": "Recién Llegados",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_6FWwHd": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "mas-vendidos",
+        "products_to_show": 4,
+        "title": "¿Quieres más?",
+        "heading_size": "h1",
+        "description": "<p>VER MÁS</p>",
+        "show_description": false,
+        "description_style": "subtitle",
+        "columns_desktop": 3,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_ckgEEx": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/sex_toys_banner_low.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "image_with_text_hTqwdM": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_fUVeGN": {
+          "type": "heading",
+          "settings": {
+            "heading": "UNA NUEVA CATEGORÍA",
+            "heading_size": "h1"
+          }
+        },
+        "text_fGadq8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Vincula un texto con una imagen para atraer la atención hacia tu producto, colección o artículo de blog seleccionados. Agrega detalles sobre disponibilidad y estilo, o incluso ofrece una reseña.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_xXRC7p": {
+          "type": "button",
+          "settings": {
+            "button_label": "COMPRAR AQUÍ",
+            "button_link": "shopify://products/caribbean-sensitivo-mix-c-5",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_fUVeGN",
+        "text_fGadq8",
+        "button_xXRC7p"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/caribbean_sensitive_mix_banner.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_fy3Yej": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RVGbRD": {
+          "type": "heading",
+          "settings": {
+            "heading": "Instagram",
+            "heading_size": "h1"
+          }
+        },
+        "heading_dgnAgn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Síguenos en @condonesprudence",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RVGbRD",
+        "heading_dgnAgn"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_xVd4pc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_tP8rPr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/instagram1.png",
+            "title": "",
+            "text": "",
+            "link_label": "TEST",
+            "link": "#"
+          }
+        },
+        "column_VCmXax": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/instagram2.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_jxcaEF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/instagram3.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_WLPGgy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/instagram4.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VcXPGT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/instagram5.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qq6jyk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/instagram6.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_piHCyG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/instagram7.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4jWkzq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/instagram8.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_tP8rPr",
+        "column_VCmXax",
+        "column_jxcaEF",
+        "column_WLPGgy",
+        "column_VcXPGT",
+        "column_qq6jyk",
+        "column_piHCyG",
+        "column_4jWkzq"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "multicolumn",
+    "featured_collection",
+    "multicolumn_DDfaMc",
+    "collage_wWp9CC",
+    "featured_collection_6FWwHd",
+    "image_banner_ckgEEx",
+    "image_with_text_hTqwdM",
+    "rich_text_fy3Yej",
+    "multicolumn_xVd4pc"
+  ]
+}
