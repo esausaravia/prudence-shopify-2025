@@ -79,12 +79,18 @@ section[id*="multicolumn_xVd4pc"]{
   .header__heading-logo {
     max-height: unset;
   }
-  .page-width {
+  .page-width,
+  .multicolumn__title,
+  .collection__title.title-wrapper--self-padded-tablet-down,
+  .multicolumn-list:not(.slider)
+   {
     padding-left: 30px;
     padding-right: 30px;
   }
-  .collection__title.title-wrapper--self-padded-tablet-down {
-    padding: 30px;
+  /* Footer */
+  .footer__blocks-wrapper.grid .grid__item:last-child {
+    text-align: center;
+    width: 100%;
   }
 }
 
