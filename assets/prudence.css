@@ -1,0 +1,22 @@
+@media screen and (min-width: 1200px)
+{
+  .page-width {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .collection slider-component, .collection .slider-component-desktop {
+    max-width: var(--page-width);
+    margin: 0 auto;
+  }
+  .collection__title.title-wrapper--self-padded-tablet-down {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .slider--desktop.grid--4-col-desktop .grid__item {
+    width: calc(100% / 4 - var(--grid-desktop-horizontal-spacing) * 3);
+  }
+  .slider--desktop .slider__slide:first-child {
+    margin-left: 0;
+    scroll-margin-left: 0;
+  }
+}
