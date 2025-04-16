@@ -2,7 +2,8 @@
   object-fit: contain;
 }
 
-#shopify-section-template--22582626124084__image_banner_ckgEEx {
+/* HOME Banner SexToys */
+section[id*="image_banner_ckgEEx"] {
   .banner {
     flex-direction: column;
   }
@@ -22,46 +23,49 @@
     margin: 0 auto;
   }
 }
-#shopify-section-template--22582626124084__multicolumn_xVd4pc {
+
+/* Dual banners con botones */
+section[id*="multicolumn_DDfaMc"] {
+  .grid {
+    column-gap: 0;
+  }
+  .multicolumn-card {
+    position: relative;
+  }
+  .multicolumn-card__image-wrapper {
+    margin: 0;
+  }
+  .multicolumn-card__info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .multicolumn-card__info .link {
+    background: black;
+    color: #EEE;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    min-height: 48px;
+    padding: 0px 20px;
+  }
+  .multicolumn-list__item:nth-child(2) .multicolumn-card__info .link {
+    background: #D73341;
+  }
+}
+
+/* Instagram */
+section[id*="multicolumn_xVd4pc"]{
   .multicolumn-card__image-wrapper {
     margin: 0;
   }
 }
+
 @media screen and (min-width: 750px) {
-  #shopify-section-template--22582626124084__multicolumn_DDfaMc {
-    .grid {
-      column-gap: 0;
-    }
-    .multicolumn-card {
-      position: relative;
-    }
-    .multicolumn-card__image-wrapper {
-      margin: 0;
-    }
-    .multicolumn-list .multicolumn-card__info {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-    }
-    .multicolumn-card__info {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .multicolumn-card__info .link {
-      background: black;
-      color: #EEE;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 0;
-      min-height: 48px;
-      padding: 0px 20px;
-    }
-    .multicolumn-list__item:nth-child(2) .multicolumn-card__info .link {
-      background: #D73341;
-    }
-  }
 }
 
 @media screen and (min-width: 1200px)
