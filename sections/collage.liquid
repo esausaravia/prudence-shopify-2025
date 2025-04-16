@@ -95,11 +95,12 @@
               {%- assign placeholder_image = 'product-apparel-' | append: placeholder_image_index -%}
               {% render 'card-product',
                 card_product: block.settings.product,
-                media_aspect_ratio: 'adapt',
+                media_aspect_ratio: 'square',
                 show_secondary_image: block.settings.second_image,
-                extend_height: true,
+                extend_height: false,
                 placeholder_image: placeholder_image,
-                skip_styles: skip_card_product_styles
+                skip_styles: skip_card_product_styles,
+                quick_add: 'standard'
               %}
               {% assign skip_card_product_styles = true %}
             {%- when 'collection' -%}
@@ -261,7 +262,7 @@
     {
       "type": "header",
       "content": "t:sections.collage.settings.header_layout.content"
-    },       
+    },
     {
       "type": "select",
       "id": "desktop_layout",
