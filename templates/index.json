@@ -31,8 +31,8 @@
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/condones_thumb_2.png",
-            "title": "",
+            "image": "shopify://shop_images/prudence_icon_condones.webp",
+            "title": "CONDONES",
             "text": "",
             "link_label": "",
             "link": ""
@@ -41,8 +41,8 @@
         "column_fbMnx3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/lubricantes_thumb_2.png",
-            "title": "",
+            "image": "shopify://shop_images/prudence_icon_lubs.webp",
+            "title": "LUBRICANTES",
             "text": "",
             "link_label": "",
             "link": ""
@@ -51,8 +51,8 @@
         "column_XzLVrC": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/juguetes_thumb_2.png",
-            "title": "",
+            "image": "shopify://shop_images/prudence_icon_juguetes.webp",
+            "title": "JUGUETES",
             "text": "",
             "link_label": "",
             "link": ""
@@ -61,8 +61,8 @@
         "column_wcBpnr": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/rx_thumb_df490043-c16c-4d5f-9540-3800eb8d9bc8.png",
-            "title": "",
+            "image": "shopify://shop_images/prudence_icon_rx.webp",
+            "title": "RX",
             "text": "",
             "link_label": "",
             "link": ""
@@ -71,8 +71,8 @@
         "column_d9b74E": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/combos_thumb_09527355-aeff-49a8-9c48-d29ed057b3ab.png",
-            "title": "",
+            "image": "shopify://shop_images/prudence_icon_combos.webp",
+            "title": "COMBOS",
             "text": "",
             "link_label": "",
             "link": ""
@@ -81,8 +81,8 @@
         "column_U4iBpb": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/novedades_thumb_3ff585f4-7d11-4ac4-bf54-3d17b6b6eac3.png",
-            "title": "",
+            "image": "shopify://shop_images/prudence_icon_novedades.webp",
+            "title": "NOVEDADES",
             "text": "",
             "link_label": "",
             "link": ""
@@ -96,6 +96,13 @@
         "column_wcBpnr",
         "column_d9b74E",
         "column_U4iBpb"
+      ],
+      "custom_css": [
+        ".multicolumn {text-align: center;}",
+        ".title-wrapper-with-link {justify-content: center;}",
+        ".multicolumn-list {max-width: 960px; margin: 0 auto;}",
+        ".multicolumn-list__item.center .media--adapt img {object-fit: contain;}",
+        ".multicolumn-list h3 {font-size: 12px;}"
       ],
       "settings": {
         "title": "VINE POR...",
@@ -450,7 +457,7 @@
         "column_4jWkzq"
       ],
       "custom_css": [
-        ".multicolumn-card__image-wrapper {margin: 0; }"
+        ".multicolumn-card__image-wrapper {margin: 0;}"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
