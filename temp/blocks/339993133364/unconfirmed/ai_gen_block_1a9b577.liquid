@@ -1,6 +1,654 @@
+{% doc %}
+  @prompt
+    creame un slider con paginasdor y solo un callto action arriba de lso paginadores
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-slider-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-slider-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+
+  .ai-slider-slide-{{ ai_gen_id }} {
+    min-width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.slide_padding }}px;
+    min-height: {{ block.settings.slider_height }}px;
+  }
+
+  .ai-slider-slide-content-{{ ai_gen_id }} {
+    text-align: center;
+    max-width: 600px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-slider-slide-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .ai-slider-slide-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity | divided_by: 100.0 }});
+    z-index: 2;
+  }
+
+  .ai-slider-slide-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 3;
+  }
+
+  .ai-slider-slide-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 600;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .ai-slider-slide-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    margin: 0 0 24px;
+    line-height: 1.4;
+  }
+
+  .ai-slider-placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    width: 100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .ai-slider-placeholder-{{ ai_gen_id }} svg {
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+  }
+
+  .ai-slider-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    z-index: 4;
+  }
+
+  .ai-slider-cta-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: {{ block.settings.cta_background_color }};
+    color: {{ block.settings.cta_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.cta_border_radius }}px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-bottom: 32px;
+  }
+
+  .ai-slider-cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.cta_hover_color }};
+  }
+
+  .ai-slider-controls-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 4;
+  }
+
+  .ai-slider-pagination-{{ ai_gen_id }} {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .ai-slider-dot-{{ ai_gen_id }} {
+    width: {{ block.settings.dot_size }}px;
+    height: {{ block.settings.dot_size }}px;
+    border-radius: 50%;
+    background-color: {{ block.settings.dot_inactive_color }};
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;opacity: 0.6;
+  }
+
+  .ai-slider-dot-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.dot_active_color }};
+    transform: scale(1.2);opacity: 1;
+  }
+
+  .ai-slider-dot-{{ ai_gen_id }}:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-slider-slide-{{ ai_gen_id }} {
+      padding: {{ block.settings.slide_padding | times: 0.7 }}px;
+      min-height: {{ block.settings.slider_height | times: 0.8 }}px;
+    }
+
+    .ai-slider-slide-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+
+    .ai-slider-slide-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+
+    .ai-slider-cta-{{ ai_gen_id }} {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+{% endstyle %}<ai-slider-{{ ai_gen_id }}
+  class="ai-slider-container-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-slider-wrapper-{{ ai_gen_id }}">
+    {% for i in (1..5) %}
+      {% liquid
+        assign slide_enabled_key = 'slide_' | append: i | append: '_enabled'
+        assign slide_image_key = 'slide_' | append: i | append: '_image'
+        assign slide_title_key = 'slide_' | append: i | append: '_title'
+        assign slide_description_key = 'slide_' | append: i | append: '_description'
+        assign slide_link_key = 'slide_' | append: i | append: '_link'
+
+        assign slide_enabled = block.settings[slide_enabled_key]
+        assign slide_image = block.settings[slide_image_key]
+        assign slide_title = block.settings[slide_title_key]
+        assign slide_description = block.settings[slide_description_key]
+        assign slide_link = block.settings[slide_link_key]
+      %}
+
+      {% if slide_enabled %}
+        <div class="ai-slider-slide-{{ ai_gen_id }}" data-slide="{{ forloop.index0 }}">
+          {% if slide_image %}
+            <img
+              src="{{ slide_image | image_url: width: 1200 }}"
+              alt="{{ slide_image.alt | escape }}"
+              class="ai-slider-slide-image-{{ ai_gen_id }}"
+              loading="lazy"
+              width="{{ slide_image.width }}"
+              height="{{ slide_image.height }}"
+            >
+          {% else %}
+            <div class="ai-slider-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+              <div class="ai-slider-empty-state-{{ ai_gen_id }}">
+                Agrega una imagen para la diapositiva {{ i }}
+              </div>
+            </div>
+          {% endif %}
+
+          {% if block.settings.show_overlay %}
+            <div class="ai-slider-slide-overlay-{{ ai_gen_id }}"></div>
+          {% endif %}
+
+          <div class="ai-slider-slide-content-{{ ai_gen_id }}">
+            {% if slide_title != blank %}
+              <h2 class="ai-slider-slide-title-{{ ai_gen_id }}">{{ slide_title }}</h2>
+            {% endif %}
+
+            {% if slide_description != blank %}
+              <div class="ai-slider-slide-description-{{ ai_gen_id }}">{{ slide_description }}</div>
+            {% endif %}
+          </div></div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="ai-slider-controls-{{ ai_gen_id }}">
+    {% if block.settings.cta_text != blank and block.settings.cta_link != blank %}
+      <a href="{{ block.settings.cta_link }}" class="ai-slider-cta-{{ ai_gen_id }}">
+        {{ block.settings.cta_text }}
+      </a>
+    {% endif %}
+
+    <div class="ai-slider-pagination-{{ ai_gen_id }}">
+      {% assign active_slides = 0 %}
+      {% for i in (1..5) %}
+        {% liquid
+          assign slide_enabled_key = 'slide_' | append: i | append: '_enabled'
+          assign slide_enabled = block.settings[slide_enabled_key]
+        %}
+        {% if slide_enabled %}<button
+            class="ai-slider-dot-{{ ai_gen_id }} {% if active_slides == 0 %}active{% endif %}"
+            data-slide="{{ active_slides }}"
+            aria-label="Ir a diapositiva {{ active_slides | plus: 1 }}"
+          ></button>
+          {% assign active_slides = active_slides | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</ai-slider-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AiSlider{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentSlide = 0;
+        this.totalSlides = 0;
+        this.autoplayInterval = null;
+      }
+
+      connectedCallback() {
+        this.wrapper = this.querySelector('.ai-slider-wrapper-{{ ai_gen_id }}');
+        this.slides = this.querySelectorAll('.ai-slider-slide-{{ ai_gen_id }}');
+        this.dots = this.querySelectorAll('.ai-slider-dot-{{ ai_gen_id }}');
+        this.totalSlides = this.slides.length;
+
+        if (this.totalSlides <= 1) return;
+
+        this.setupEventListeners();
+        this.startAutoplay();
+      }
+
+      disconnectedCallback() {
+        this.stopAutoplay();
+      }
+
+      setupEventListeners() {
+        this.dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            this.goToSlide(index);
+          });
+        });
+
+        this.addEventListener('mouseenter', () => {
+          this.stopAutoplay();
+        });
+
+        this.addEventListener('mouseleave', () => {
+          this.startAutoplay();
+        });
+      }
+
+      goToSlide(slideIndex) {
+        if (slideIndex < 0 || slideIndex >= this.totalSlides) return;
+
+        this.currentSlide = slideIndex;
+        const translateX = -slideIndex * 100;
+        this.wrapper.style.transform = `translateX(${translateX}%)`;
+
+        this.dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === slideIndex);
+        });
+      }
+
+      nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+        this.goToSlide(nextIndex);
+      }
+
+      startAutoplay() {
+        if (this.totalSlides <= 1) return;
+        this.stopAutoplay();
+        this.autoplayInterval = setInterval(() => {
+          this.nextSlide();
+        }, {{ block.settings.autoplay_speed | times: 1000 }});
+      }
+
+      stopAutoplay() {
+        if (this.autoplayInterval) {
+          clearInterval(this.autoplayInterval);
+          this.autoplayInterval = null;
+        }
+      }
+    }
+
+    customElements.define('ai-slider-{{ ai_gen_id }}', AiSlider{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Slider con paginador",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configuración general"
+    },
+    {
+      "type": "range",
+      "id": "slider_height",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Altura del slider",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "slide_padding",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Espaciado interno",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Radio del borde",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Velocidad de reproducción automática",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color de fondo",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color del texto",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Mostrar superposición",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 10,
+      "unit": "%",
+      "label": "Opacidad de la superposición",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Tipografía"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Tamaño del título",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño de la descripción",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Texto del botón",
+      "default": "Ver más"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Enlace del botón"
+    },
+    {
+      "type": "color",
+      "id": "cta_background_color",
+      "label": "Color de fondo del botón",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "Color del texto del botón",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_color",
+      "label": "Color de fondo al pasar el cursor",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "cta_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Radio del borde del botón",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Paginador"
+    },
+    {
+      "type": "range",
+      "id": "dot_size",
+      "min": 8,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Tamaño de los puntos",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "dot_active_color",
+      "label": "Color del punto activo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "dot_inactive_color",
+      "label": "Color del punto inactivo",
+      "default": "#cccccc"
+    },
+    {
+      "type": "header",
+      "content": "Diapositiva1"
+    },
+    {
+      "type": "checkbox",
+      "id": "slide_1_enabled",
+      "label": "Habilitar diapositiva 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_1_image",
+      "label": "Imagen"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_title",
+      "label": "Título",
+      "default": "Primera diapositiva"
+    },
+    {
+      "type": "textarea",
+      "id": "slide_1_description",
+      "label": "Descripción",
+      "default": "Descripción de la primera diapositiva"
+    },
+    {
+      "type": "header",
+      "content": "Diapositiva 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "slide_2_enabled",
+      "label": "Habilitar diapositiva 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_2_image",
+      "label": "Imagen"
+    },
+    {
+      "type": "text",
+      "id": "slide_2_title",
+      "label": "Título",
+      "default": "Segunda diapositiva"
+    },
+    {
+      "type": "textarea",
+      "id": "slide_2_description",
+      "label": "Descripción",
+      "default": "Descripción de la segunda diapositiva"
+    },
+    {
+      "type": "header",
+      "content": "Diapositiva 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "slide_3_enabled",
+      "label": "Habilitar diapositiva 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_3_image",
+      "label": "Imagen"
+    },
+    {
+      "type": "text",
+      "id": "slide_3_title",
+      "label": "Título",
+      "default": "Tercera diapositiva"
+    },
+    {
+      "type": "textarea",
+      "id": "slide_3_description",
+      "label": "Descripción",
+      "default": "Descripción de la tercera diapositiva"
+    },
+    {
+      "type": "header",
+      "content": "Diapositiva 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "slide_4_enabled",
+      "label": "Habilitar diapositiva 4",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_4_image",
+      "label": "Imagen"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_title",
+      "label": "Título"
+    },
+    {
+      "type": "textarea",
+      "id": "slide_4_description",
+      "label": "Descripción"
+    },
+    {
+      "type": "header",
+      "content": "Diapositiva 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "slide_5_enabled",
+      "label": "Habilitar diapositiva 5",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_5_image",
+      "label": "Imagen"
+    },
+    {
+      "type": "text",
+      "id": "slide_5_title",
+      "label": "Título"
+    },
+    {
+      "type": "textarea",
+      "id": "slide_5_description",
+      "label": "Descripción"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider con paginador"
+    }
+  ]
+}
 {% endschema %}
