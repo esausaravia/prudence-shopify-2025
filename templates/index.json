@@ -11,6 +11,7 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/TopBanner_1920x_e79e7c81-afe1-4d90-b1ad-0c4a9fa58a81.webp",
         "image_overlay_opacity": 0,
@@ -23,6 +24,61 @@
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
+      }
+    },
+    "slideshow_7X4rBz": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_LMJBMp": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Prudence_Banner-1813X694_Zero.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "Etiqueta de botón",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
+        "slide_rGyFke": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Diapositiva de imagen",
+            "heading_size": "h1",
+            "subheading": "Cuenta la historia de tu marca a través de imágenes",
+            "button_label": "Etiqueta de botón",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_LMJBMp",
+        "slide_rGyFke"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": ""
       }
     },
     "multicolumn": {
@@ -490,6 +546,7 @@
   },
   "order": [
     "image_banner",
+    "slideshow_7X4rBz",
     "multicolumn",
     "featured_collection",
     "multicolumn_DDfaMc",
