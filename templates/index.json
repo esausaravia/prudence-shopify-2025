@@ -50,10 +50,11 @@
         "slide_rGyFke": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Prudence_Banner-1813X694_Sensabroso.png",
             "image_overlay_opacity": 0,
-            "heading": "Diapositiva de imagen",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Cuenta la historia de tu marca a través de imágenes",
+            "subheading": "",
             "button_label": "Etiqueta de botón",
             "link": "",
             "button_style_secondary": false,
