@@ -29,6 +29,24 @@
     "slideshow_7X4rBz": {
       "type": "slideshow",
       "blocks": {
+        "slide_j8qL4f": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Prudence_Banner-1813X694_UNIQ.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "Etiqueta de botón",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
         "slide_LMJBMp": {
           "type": "slide",
           "settings": {
@@ -67,6 +85,7 @@
         }
       },
       "block_order": [
+        "slide_j8qL4f",
         "slide_LMJBMp",
         "slide_rGyFke"
       ],
