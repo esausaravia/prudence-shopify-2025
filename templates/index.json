@@ -20,10 +20,20 @@
             "link": "",
             "overlay_opacity": 0
           }
+        },
+        "slide_TrzVxt": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Prudence_Banner-1813X694_Sensabroso.png",
+            "image_mobile": "shopify://shop_images/Sensabroso_Prudence_Mobile.png",
+            "link": "",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
-        "slide_bPKe7h"
+        "slide_bPKe7h",
+        "slide_TrzVxt"
       ],
       "name": "Slider imágenes",
       "settings": {}
