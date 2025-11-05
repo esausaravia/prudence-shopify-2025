@@ -5,35 +5,25 @@
     {% for block in section.blocks %}
       {% if block.type == 'slide' %}
         <div class="slide">
-          <picture>
-            {% if block.settings.image_mobile %}
-              <source media="(max-width: 749px)" srcset="{{ block.settings.image_mobile | image_url: width: 900 }}">
-            {% endif %}
-            {% if block.settings.image_tablet %}
-              <source media="(max-width: 1024px)" srcset="{{ block.settings.image_tablet | image_url: width: 1200 }}">
-            {% endif %}
-            {% if block.settings.image_desktop %}
-              <img src="{{ block.settings.image_desktop | image_url: width: 2000 }}" alt="{{ block.settings.title | escape }}">
-            {% else %}
-              <div style="background:#eee;height:100%;display:flex;align-items:center;justify-content:center;color:#888;">Sin imagen</div>
-            {% endif %}
-          </picture>
+          <a href="{{ block.settings.link | default: '#' }}">
+            <picture>
+              {% if block.settings.image_mobile %}
+                <source media="(max-width: 749px)" srcset="{{ block.settings.image_mobile | image_url: width: 900 }}">
+              {% endif %}
+              {% if block.settings.image_tablet %}
+                <source media="(max-width: 1024px)" srcset="{{ block.settings.image_tablet | image_url: width: 1200 }}">
+              {% endif %}
+              {% if block.settings.image_desktop %}
+                <img src="{{ block.settings.image_desktop | image_url: width: 2000 }}" alt="slide">
+              {% else %}
+                <div style="background:#f2f2f2;height:100%;display:flex;align-items:center;justify-content:center;color:#999;">Sin imagen</div>
+              {% endif %}
+            </picture>
+          </a>
 
           {% if block.settings.overlay_opacity > 0 %}
             <div class="overlay" style="background:rgba(0,0,0,{{ block.settings.overlay_opacity | divided_by: 100.0 }});"></div>
           {% endif %}
-
-          <div class="content {{ block.settings.text_position }}">
-            {% if block.settings.title != blank %}
-              <h2>{{ block.settings.title }}</h2>
-            {% endif %}
-            {% if block.settings.subtitle != blank %}
-              <p>{{ block.settings.subtitle }}</p>
-            {% endif %}
-            {% if block.settings.cta_text != blank and block.settings.cta_url != blank %}
-              <a href="{{ block.settings.cta_url }}" class="cta">{{ block.settings.cta_text }}</a>
-            {% endif %}
-          </div>
         </div>
       {% endif %}
     {% endfor %}
@@ -46,89 +36,63 @@
   overflow: hidden;
   width: 100%;
 }
+
 .custom-slider-{{ section_id }} .slider-wrapper {
   display: flex;
   transition: transform 0.6s ease;
 }
+
 .custom-slider-{{ section_id }} .slide {
   position: relative;
   min-width: 100%;
   height: 600px;
   overflow: hidden;
 }
+
 .custom-slider-{{ section_id }} img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
+
 .custom-slider-{{ section_id }} .overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
-.custom-slider-{{ section_id }} .content {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  color: #fff;
-  text-align: center;
-  z-index: 2;
+
+@media (max-width: 1024px) {
+  .custom-slider-{{ section_id }} .slide { height: 400px; }
 }
-.custom-slider-{{ section_id }} .content.left { left: 15%; transform: translateY(-50%); text-align: left; }
-.custom-slider-{{ section_id }} .content.right { right: 15%; left: auto; transform: translateY(-50%); text-align: right; }
-.custom-slider-{{ section_id }} .cta {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #000;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  margin-top: 10px;
-}
-.custom-slider-{{ section_id }} .cta:hover {
-  background: #444;
-}
-@media (max-width: 1024px){
-  .custom-slider-{{ section_id }} .slide{ height: 400px; }
-}
-@media (max-width: 749px){
-  .custom-slider-{{ section_id }} .slide{ height: 300px; }
+
+@media (max-width: 749px) {
+  .custom-slider-{{ section_id }} .slide { height: 300px; }
 }
 </style>
 
 {% schema %}
 {
-  "name": "Slider personalizado",
+  "name": "Slider imágenes",
   "settings": [],
   "blocks": [
     {
       "type": "slide",
-      "name": "Slide",
+      "name": "Imagen",
       "settings": [
         { "type": "image_picker", "id": "image_desktop", "label": "Imagen escritorio" },
         { "type": "image_picker", "id": "image_tablet", "label": "Imagen tablet" },
         { "type": "image_picker", "id": "image_mobile", "label": "Imagen móvil" },
-        { "type": "text", "id": "title", "label": "Título", "default": "Título del slide" },
-        { "type": "text", "id": "subtitle", "label": "Subtítulo", "default": "Subtítulo descriptivo" },
-        { "type": "text", "id": "cta_text", "label": "Texto del botón", "default": "Ver más" },
-        { "type": "url", "id": "cta_url", "label": "Enlace del botón" },
-        { "type": "range", "id": "overlay_opacity", "min": 0, "max": 80, "step": 5, "unit": "%", "label": "Opacidad del overlay", "default": 30 },
-        {
-          "type": "radio",
-          "id": "text_position",
-          "label": "Posición del texto",
-          "options": [
-            { "value": "left", "label": "Izquierda" },
-            { "value": "center", "label": "Centro" },
-            { "value": "right", "label": "Derecha" }
-          ],
-          "default": "center"
-        }
+        { "type": "url", "id": "link", "label": "Enlace (producto o página)" },
+        { "type": "range", "id": "overlay_opacity", "min": 0, "max": 80, "step": 5, "unit": "%", "label": "Opacidad overlay", "default": 0 }
       ]
     }
   ],
   "presets": [
-    { "name": "Slider personalizado" }
+    { "name": "Slider imágenes" }
   ]
 }
 {% endschema %}
