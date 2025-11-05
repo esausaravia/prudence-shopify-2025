@@ -9,42 +9,24 @@
  */
 {
   "sections": {
-    "slideshow_ziARax": {
-      "type": "slideshow",
+    "custom_slider_KGyUjn": {
+      "type": "custom-slider",
       "blocks": {
-        "slide_UYwxFa": {
+        "slide_bPKe7h": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Prudence_Banner-1813X694_Zero.png",
-            "image_overlay_opacity": 0,
-            "heading": "Prudence zero",
-            "heading_size": "h1",
-            "subheading": "Cuenta la historia de tu marca a través de imágenes",
-            "button_label": "Etiqueta de botón",
+            "image_desktop": "shopify://shop_images/Prudence_Banner-1813X694_Zero.png",
+            "image_mobile": "shopify://shop_images/Zero_Prudence_Mobile.png",
             "link": "",
-            "button_style_secondary": false,
-            "show_text_box": true,
-            "box_align": "bottom-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": ""
+            "overlay_opacity": 0
           }
         }
       },
       "block_order": [
-        "slide_UYwxFa"
+        "slide_bPKe7h"
       ],
-      "name": "t:sections.slideshow.presets.name",
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Presentación de diapositivas sobre tu marca"
-      }
+      "name": "Slider imágenes",
+      "settings": {}
     },
     "image_banner": {
       "type": "image-banner",
@@ -517,7 +499,7 @@
     }
   },
   "order": [
-    "slideshow_ziARax",
+    "custom_slider_KGyUjn",
     "image_banner",
     "multicolumn",
     "featured_collection",
