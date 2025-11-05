@@ -1,7 +1,7 @@
 {% assign section_id = section.id %}
 
 <div class="custom-slider-{{ section_id }}">
-  <div class="slider-wrapper">
+  <div class="slider-wrapper" id="slider-track-{{ section_id }}">
     {% for block in section.blocks %}
       {% if block.type == 'slide' %}
         <div class="slide">
@@ -20,7 +20,6 @@
               {% endif %}
             </picture>
           </a>
-
           {% if block.settings.overlay_opacity > 0 %}
             <div class="overlay" style="background:rgba(0,0,0,{{ block.settings.overlay_opacity | divided_by: 100.0 }});"></div>
           {% endif %}
@@ -28,6 +27,13 @@
       {% endif %}
     {% endfor %}
   </div>
+
+  <!-- Controles -->
+  <button class="nav-btn prev" id="prev-{{ section_id }}">‹</button>
+  <button class="nav-btn next" id="next-{{ section_id }}">›</button>
+
+  <!-- Paginación -->
+  <div class="pagination" id="pagination-{{ section_id }}"></div>
 </div>
 
 <style>
@@ -36,48 +42,199 @@
   overflow: hidden;
   width: 100%;
 }
-
 .custom-slider-{{ section_id }} .slider-wrapper {
   display: flex;
   transition: transform 0.6s ease;
+  touch-action: pan-y;
 }
-
 .custom-slider-{{ section_id }} .slide {
   position: relative;
   min-width: 100%;
-  height: 600px;
+  height: {{ section.settings.height_desktop }}px;
   overflow: hidden;
 }
-
 .custom-slider-{{ section_id }} img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
 .custom-slider-{{ section_id }} .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   pointer-events: none;
 }
 
-@media (max-width: 1024px) {
-  .custom-slider-{{ section_id }} .slide { height: 400px; }
+/* Navegación */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+.nav-btn:hover { background: rgba(0,0,0,0.7); }
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* Paginación */
+.pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+.pagination span {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.pagination span.active {
+  background: #fff;
 }
 
+@media (max-width: 1024px) {
+  .custom-slider-{{ section_id }} .slide { height: {{ section.settings.height_tablet }}px; }
+}
 @media (max-width: 749px) {
-  .custom-slider-{{ section_id }} .slide { height: 300px; }
+  .custom-slider-{{ section_id }} .slide { height: {{ section.settings.height_mobile }}px; }
+  .nav-btn { width: 35px; height: 35px; font-size: 1.5rem; }
 }
 </style>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const slider = document.querySelector("#slider-track-{{ section_id }}");
+  const slides = slider.querySelectorAll(".slide");
+  const prevBtn = document.querySelector("#prev-{{ section_id }}");
+  const nextBtn = document.querySelector("#next-{{ section_id }}");
+  const pagination = document.querySelector("#pagination-{{ section_id }}");
+  let current = 0;
+  let startX = 0;
+  let isDragging = false;
+  let autoplayInterval;
+  const autoplaySpeed = {{ section.settings.autoplay_speed | default: 5 }} * 1000;
+
+  // Crear paginación
+  slides.forEach((_, index) => {
+    const dot = document.createElement("span");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goToSlide(index));
+    pagination.appendChild(dot);
+  });
+  const dots = pagination.querySelectorAll("span");
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle("active", i === current));
+  }
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    updateSlider();
+  }
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+  function goToSlide(i) {
+    current = i;
+    updateSlider();
+    restartAutoplay();
+  }
+
+  function startAutoplay() {
+    autoplayInterval = setInterval(nextSlide, autoplaySpeed);
+  }
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+  function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  nextBtn.addEventListener("click", () => { nextSlide(); restartAutoplay(); });
+  prevBtn.addEventListener("click", () => { prevSlide(); restartAutoplay(); });
+
+  // Swipe táctil
+  slider.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    stopAutoplay();
+  });
+  slider.addEventListener("touchmove", e => {
+    if (!isDragging) return;
+    const diff = e.touches[0].clientX - startX;
+    if (diff > 50) { prevSlide(); isDragging = false; }
+    else if (diff < -50) { nextSlide(); isDragging = false; }
+  });
+  slider.addEventListener("touchend", () => {
+    isDragging = false;
+    startAutoplay();
+  });
+
+  // Inicialización
+  updateSlider();
+  startAutoplay();
+});
+</script>
+
 {% schema %}
 {
-  "name": "Slider imágenes",
-  "settings": [],
+  "name": "Slider imágenes PRO",
+  "settings": [
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Velocidad de autoplay (segundos)",
+      "min": 2,
+      "max": 15,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "label": "Altura desktop (px)",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "height_tablet",
+      "label": "Altura tablet (px)",
+      "min": 200,
+      "max": 600,
+      "step": 50,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Altura móvil (px)",
+      "min": 200,
+      "max": 500,
+      "step": 50,
+      "default": 300
+    }
+  ],
   "blocks": [
     {
       "type": "slide",
@@ -92,7 +249,7 @@
     }
   ],
   "presets": [
-    { "name": "Slider imágenes" }
+    { "name": "Slider imágenes PRO" }
   ]
 }
 {% endschema %}
