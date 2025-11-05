@@ -29,48 +29,10 @@
             "text_alignment_mobile": "center",
             "color_scheme": ""
           }
-        },
-        "slide_UJK9Mn": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Prudence_Banner-1813X694_Sensabroso.png",
-            "image_overlay_opacity": 0,
-            "heading": "Diapositiva de imagen",
-            "heading_size": "h1",
-            "subheading": "Cuenta la historia de tu marca a través de imágenes",
-            "button_label": "Etiqueta de botón",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": ""
-          }
-        },
-        "slide_qQTwCY": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Prudence_Banner-1813X694_UNIQ.png",
-            "image_overlay_opacity": 0,
-            "heading": "Diapositiva de imagen",
-            "heading_size": "h1",
-            "subheading": "Cuenta la historia de tu marca a través de imágenes",
-            "button_label": "Etiqueta de botón",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": ""
-          }
         }
       },
       "block_order": [
-        "slide_UYwxFa",
-        "slide_UJK9Mn",
-        "slide_qQTwCY"
+        "slide_UYwxFa"
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
