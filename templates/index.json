@@ -46,7 +46,12 @@
         "slide_7N9E9f"
       ],
       "name": "Slider imágenes",
-      "settings": {}
+      "settings": {
+        "autoplay_speed": 5,
+        "height_desktop": 600,
+        "height_tablet": 400,
+        "height_mobile": 300
+      }
     },
     "image_banner": {
       "type": "image-banner",
@@ -205,7 +210,7 @@
         "column_kzE9L6": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/frutas_rojas_mix_banner.png",
+            "image": "shopify://shop_images/Moras_Prudence_Sensabroso.png",
             "title": "",
             "text": "",
             "link_label": "LOS NUEVOS Y MÁS SABROSOS",
