@@ -33,7 +33,8 @@
         "slide_7N9E9f": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/Prudence_Banner-1813X694_UNIQ.png",
+            "image_desktop": "shopify://shop_images/Uniq_Prudence_Mobile_Escritorio_2.png",
+            "image_tablet": "shopify://shop_images/Uniq_Tienda_Online_Prudence_Mobile_1.png",
             "image_mobile": "shopify://shop_images/Uniq_Tienda_Online_Prudence_Mobile.png",
             "link": "",
             "overlay_opacity": 0
