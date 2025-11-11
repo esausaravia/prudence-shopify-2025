@@ -30,24 +30,12 @@
             "overlay_opacity": 0
           }
         },
-        "slide_TrzVxt": {
+        "slide_bbTxHr": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image_desktop": "shopify://shop_images/Prudence_Banner-1813X694_Sensabroso.png",
-            "image_mobile": "shopify://shop_images/Sensabroso_Prudence_Mobile.png",
-            "link": "",
-            "overlay_opacity": 0
-          }
-        },
-        "slide_7N9E9f": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image_desktop": "shopify://shop_images/Uniq_Prudence_Mobile_Escritorio_2.png",
-            "image_tablet": "shopify://shop_images/Uniq_Tienda_Online_Prudence_Mobile_1.png",
-            "image_mobile": "shopify://shop_images/Uniq_Tienda_Online_Prudence_Mobile.png",
-            "link": "",
+            "image_desktop": "shopify://shop_images/Slider_Escritorio_Sensabroso_V2.png",
+            "image_mobile": "shopify://shop_images/Slider_Mobile_Sensabroso_V2.png",
+            "link": "https://tienda.prudence.com.mx/products/caribbean-sensitivo-mix-c-5",
             "overlay_opacity": 0
           }
         }
@@ -55,8 +43,7 @@
       "block_order": [
         "slide_bPKe7h",
         "slide_B9Ugeq",
-        "slide_TrzVxt",
-        "slide_7N9E9f"
+        "slide_bbTxHr"
       ],
       "name": "Slider imágenes",
       "settings": {
