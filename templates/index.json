@@ -15,6 +15,15 @@
         "slide_bPKe7h": {
           "type": "slide",
           "settings": {
+            "image_desktop": "shopify://shop_images/Prudence_Banner_22Diciembre.png",
+            "image_mobile": "shopify://shop_images/Prudence_Banner-Tienda_Online_Cuadrado.jpg",
+            "link": "",
+            "overlay_opacity": 0
+          }
+        },
+        "slide_PmgCDX": {
+          "type": "slide",
+          "settings": {
             "image_desktop": "shopify://shop_images/Prudence_Banner-1813X694_Zero.png",
             "image_mobile": "shopify://shop_images/Zero_Prudence_Mobile.png",
             "link": "",
@@ -42,6 +51,7 @@
       },
       "block_order": [
         "slide_bPKe7h",
+        "slide_PmgCDX",
         "slide_B9Ugeq",
         "slide_bbTxHr"
       ],
