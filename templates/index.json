@@ -15,6 +15,15 @@
         "slide_PmgCDX": {
           "type": "slide",
           "settings": {
+            "image_desktop": "shopify://shop_images/Prudence_Banner_RS.png",
+            "image_mobile": "shopify://shop_images/Prudence_FB_RollingStone.png",
+            "link": "https://tienda.prudence.com.mx/search?q=zero&options%5Bprefix%5D=last",
+            "overlay_opacity": 0
+          }
+        },
+        "slide_H9YWkj": {
+          "type": "slide",
+          "settings": {
             "image_desktop": "shopify://shop_images/Prudence_Banner-1813X694_Zero.png",
             "image_mobile": "shopify://shop_images/Zero_Prudence_Mobile.png",
             "link": "",
@@ -42,6 +51,7 @@
       },
       "block_order": [
         "slide_PmgCDX",
+        "slide_H9YWkj",
         "slide_B9Ugeq",
         "slide_bbTxHr"
       ],
