@@ -12,6 +12,14 @@
     "custom_slider_KGyUjn": {
       "type": "custom-slider",
       "blocks": {
+        "slide_hMkAFd": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Prudence_Blog_Burrito_Escritorio.png",
+            "link": "",
+            "overlay_opacity": 0
+          }
+        },
         "slide_PmgCDX": {
           "type": "slide",
           "settings": {
@@ -52,6 +60,7 @@
         }
       },
       "block_order": [
+        "slide_hMkAFd",
         "slide_PmgCDX",
         "slide_H9YWkj",
         "slide_B9Ugeq",
