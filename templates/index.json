@@ -15,7 +15,8 @@
         "slide_hMkAFd": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/Prudence_Blog_Burrito_Escritorio.png",
+            "image_desktop": "shopify://shop_images/Prudence_Banner_Globos_1.png",
+            "image_mobile": "shopify://shop_images/Prudence_Banner_Globos_Cuadrado.jpg",
             "link": "https://tienda.prudence.com.mx/products/caribbean-sensitivo-mix-c-20?_pos=1&_sid=8922b572b&_ss=r",
             "overlay_opacity": 0
           }
