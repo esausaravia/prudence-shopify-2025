@@ -14,6 +14,7 @@
       "blocks": {
         "slide_hMkAFd": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image_desktop": "shopify://shop_images/Prudence_Banner_Globos_1.png",
             "image_mobile": "shopify://shop_images/Prudence_Banner_Globos_Cuadrado.jpg",
